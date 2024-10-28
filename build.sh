@@ -10,8 +10,8 @@ git clone https://github.com/xz-mirror/xz
 cd xz
 autoreconf -fi
 ./autogen.sh
-./configure LDFLAGS="-static" --enable-static --disable-shared
-make -j8 LDFLAGS="--static"
+./configure LDFLAGS="-static -Wl,--gc-sections -ffunction-sections -fdata-sections" --enable-static --disable-shared
+make -j8 LDFLAGS="--static -Wl,--gc-sections -ffunction-sections -fdata-sections"
 strip src/xz/xz
 upx src/xz/xz
 cp src/xz/xz ../output/
