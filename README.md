@@ -1,1 +1,1 @@
-xz static binary
+just xz static binary
