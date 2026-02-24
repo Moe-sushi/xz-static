@@ -8,7 +8,7 @@ yes|sudo apt install --no-install-recommends -y curl xz-utils jq gzip \
               libcap-dev \
               libc6-dev \
               binutils 
-. <(curl -sL https://get.ruri.zip/rurima) -s
+bash -c ". <(curl -sL https://get.ruri.zip/rurima) -s"
 ./rurima pull alpine:3.19 ./alpine
 git clone https://github.com/moe-hacker/ruri
 cd ruri
