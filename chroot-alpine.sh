@@ -9,7 +9,8 @@ yes|sudo apt install --no-install-recommends -y curl xz-utils jq gzip file \
               libc6-dev \
               binutils 
 bash -c ". <(curl -sL https://get.ruri.zip/rurima) -s"
-./rurima pull alpine:3.19 ./alpine
+./rurima lxc pull -s ./alpine -o alpine -v 3.19
+[[ $? == 0 ]]||./rurima lxc pull -s ./alpine -o alpine -v edge
 git clone https://github.com/moe-hacker/ruri
 cd ruri
 cc -Wl,--gc-sections -static src/*.c src/easteregg/*.c -o ruri -lcap -lseccomp -lpthread
