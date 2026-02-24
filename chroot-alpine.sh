@@ -1,7 +1,7 @@
 apt update
 apt install -y sudo
 sudo apt install -y git wget
-yes|sudo apt install --no-install-recommends -y curl xz-utils \
+yes|sudo apt install --no-install-recommends -y curl xz-utils jq gzip \
               make \
               clang \
               libseccomp-dev \
