@@ -8,10 +8,8 @@ yes|sudo apt install --no-install-recommends -y curl xz-utils \
               libcap-dev \
               libc6-dev \
               binutils 
-git clone https://github.com/moe-hacker/rootfstool
-rootfstool/rootfstool d -d alpine -v 3.19
-mkdir alpine
-sudo tar -xvf rootfs.tar.xz -C alpine
+. <(curl -sL https://get.ruri.zip/rurima) -s
+./rurima pull alpine:3.19 ./alpine
 git clone https://github.com/moe-hacker/ruri
 cd ruri
 cc -Wl,--gc-sections -static src/*.c src/easteregg/*.c -o ruri -lcap -lseccomp -lpthread
